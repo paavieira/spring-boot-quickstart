@@ -1,0 +1,14 @@
+version: '3'
+services:
+  spring-boot-quickstart:
+    image: com.paavieira.quickstarts/spring-boot-quickstart
+    ports:
+    - "8080:8080"
+    links:
+    - mongo
+    environment:
+    - SPRING_PROFILES_ACTIVE=prod
+    - MONGODB_URI=mongodb://mongo:27017/test
+  mongo:
+    image: mongo
+    restart: always
