@@ -21,3 +21,6 @@
 .settings
 .classpath
 .project
+
+# VS Code files
+.vscode/
