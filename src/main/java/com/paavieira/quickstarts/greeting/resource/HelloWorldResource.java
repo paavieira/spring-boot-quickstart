@@ -1,4 +1,4 @@
-package com.paavieira.quickstarts.greeting.controller;
+package com.paavieira.quickstarts.greeting.resource;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/greeting")
 @EnableAutoConfiguration
-public class HelloWorld {
+public class HelloWorldResource {
 
 	private static final String template = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();
