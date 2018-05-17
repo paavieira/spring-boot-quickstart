@@ -6,7 +6,6 @@ import com.paavieira.quickstarts.customer.controller.CustomerController;
 import com.paavieira.quickstarts.customer.model.Customer;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/customers")
-@EnableAutoConfiguration
 public class CustomerResource {
 
 	@Autowired

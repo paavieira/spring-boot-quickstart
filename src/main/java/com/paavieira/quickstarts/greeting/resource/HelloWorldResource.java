@@ -4,7 +4,6 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import com.paavieira.quickstarts.greeting.model.Greeting;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/greeting")
-@EnableAutoConfiguration
 public class HelloWorldResource {
 
 	private static final String template = "Hello, %s!";
