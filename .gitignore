@@ -1,14 +1,23 @@
+# Compiled class file
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+*.iml
+**/*.vsix
+
+# Gradle files
 .gradle
 /build/
-
-# Ignore Gradle GUI config
-gradle-app.setting
-
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+/bin/
 !gradle-wrapper.jar
 
-# Cache of project
-.gradletasknamecache
-
-# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
-# gradle/wrapper/gradle-wrapper.properties
+# Eclipse files
+.settings
+.classpath
+.project
