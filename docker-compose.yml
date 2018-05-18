@@ -7,7 +7,7 @@ services:
     links:
     - mongo
     environment:
-    - SPRING_PROFILES_ACTIVE=prod
+    - SPRING_PROFILES_ACTIVE=production
     - MONGODB_URI=mongodb://mongo:27017/test
   mongo:
     image: mongo
