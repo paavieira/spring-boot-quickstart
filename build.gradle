@@ -18,6 +18,11 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'com.palantir.docker'
 
+bootRun {
+    systemProperties = System.properties
+	environment 'spring.profiles.active', 'development'
+}
+
 jar {
 	baseName = 'spring-boot-quickstart'
 	version =  '1.0.0-SNAPSHOT'
