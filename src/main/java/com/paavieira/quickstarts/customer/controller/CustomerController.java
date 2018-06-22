@@ -20,40 +20,40 @@ import org.springframework.web.bind.annotation.RestController;
 public class CustomerController {
 
 	@Autowired
-	private CustomerService controller;
+	private CustomerService service;
 
 	@PostMapping
 	@ResponseBody
 	public Customer postCreate(@RequestBody(required = true) Customer customer) {
-		return controller.save(customer);
+		return service.save(customer);
 	}
 
 	@GetMapping
 	@ResponseBody
 	public List<Customer> getCollection() {
-		return controller.findAll();
+		return service.findAll();
 	}
 
 	@GetMapping("/{id}")
 	@ResponseBody
 	public Customer getSingle(@PathVariable("id") String id) {
-		return controller.findById(id);
+		return service.findById(id);
 	}
 
 	@PostMapping("/{id}")
 	@ResponseBody
 	public Customer postUpdate(@PathVariable("id") String id, @RequestBody(required = true) Customer customer) {
-		return controller.update(id, customer.getFirstName(), customer.getLastName());
+		return service.update(id, customer.getFirstName(), customer.getLastName());
 	}
 
 	@DeleteMapping("/{id}")
 	public void deleteSingle(@PathVariable("id") String id) {
-		controller.delete(id);
+		service.delete(id);
 	}
 
 	@DeleteMapping
 	public void deleteCollection() {
-		controller.deleteAll();
+		service.deleteAll();
 	}
 
 }
