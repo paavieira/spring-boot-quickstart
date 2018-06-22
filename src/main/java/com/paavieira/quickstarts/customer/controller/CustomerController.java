@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,8 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/customers")
 public class CustomerController {
 
-	@Autowired
 	private CustomerService service;
+
+	private CustomerController(CustomerService service) {
+		this.service = service;
+	}
 
 	@PostMapping
 	@ResponseBody
@@ -30,8 +34,8 @@ public class CustomerController {
 
 	@GetMapping
 	@ResponseBody
-	public List<Customer> getCollection() {
-		return service.findAll();
+	public List<Customer> getCollection(@RequestParam(value = "firstName", required = false) String firstName, @RequestParam(value = "lastName", required = false) String lastName) {
+		return service.findAll(firstName, lastName);
 	}
 
 	@GetMapping("/{id}")

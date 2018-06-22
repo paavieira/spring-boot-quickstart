@@ -16,9 +16,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomerService {
 
-	@Autowired
 	private CustomerRepository repository;
 
+	public CustomerService(CustomerRepository repository) {
+		this.repository = repository;
+	}
+	
 	public Customer save(Customer customer) {
 
 		if (customer.isNameInvalid()) {
@@ -32,8 +35,9 @@ public class CustomerService {
 		return repository.save(customer);
 	}
 
-	public List<Customer> findAll() {
-		return repository.findAll();
+	public List<Customer> findAll(String firstName, String lastName) {
+		final Customer example = new Customer(firstName, lastName);
+		return repository.findAll(Example.of(example));
 	}
 
 	public Customer findById(String id) {

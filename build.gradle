@@ -28,6 +28,10 @@ jar {
 	version =  '1.0.0-SNAPSHOT'
 }
 
+test {
+	environment 'spring.profiles.active', 'test'
+}
+
 docker {
 	dependsOn build
 	name "${project.group}/${jar.baseName}"
